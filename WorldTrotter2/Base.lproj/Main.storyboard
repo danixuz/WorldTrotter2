@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WorldTrotter2" customModuleProvider="target" sceneMemberID="viewController">
@@ -63,13 +63,13 @@
                             <constraint firstItem="2tw-i1-qFT" firstAttribute="top" secondItem="SmR-X3-Jh5" secondAttribute="bottom" constant="8" id="vc1-Br-NM4"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="rCL-km-234"/>
+                    <tabBarItem key="tabBarItem" title="Convert" image="thermometer" catalog="system" id="rCL-km-234"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="20" y="3.5545023696682461"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="0UP-HS-hlE">
             <objects>
                 <viewController id="qL3-Fd-7Gh" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <standardMapConfiguration key="preferredConfiguration"/>
                     </mapView>
-                    <tabBarItem key="tabBarItem" title="Item" id="qvD-Aq-siJ"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="qvD-Aq-siJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y3o-7o-5AQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -90,12 +90,13 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="eI0-by-njm" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="987-OK-mUG">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="qL3-Fd-7Gh" kind="relationship" relationship="viewControllers" id="wGZ-LA-1Q8"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="aMc-go-hGW"/>
+                        <segue destination="qL3-Fd-7Gh" kind="relationship" relationship="viewControllers" id="wGZ-LA-1Q8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMs-Ta-Xm9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -104,6 +105,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="thermometer" catalog="system" width="80" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
