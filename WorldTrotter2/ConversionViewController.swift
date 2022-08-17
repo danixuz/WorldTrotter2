@@ -7,13 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConversionViewController: UIViewController {
     // Create the gradient layer
 //    let gradientLayer: CAGradientLayer = CAGradientLayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do additional stuff after the view loaded.
+        // Do more after view controller's view FINISHES loading.
+        
+        print("ConversionViewController finished loading it's view")
         
         // MARK: Creating tab bar programmaticaly and settings an tab bar item's image.
 //        let tabBar = UITabBarController()
