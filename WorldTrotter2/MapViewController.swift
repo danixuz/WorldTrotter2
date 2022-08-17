@@ -27,6 +27,10 @@ class MapViewController: UIViewController {
         segmentedControl.backgroundColor = UIColor.systemBackground
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false // The line of code regarding translating constraints has to do with an older system for scaling interfaces – autoresizing masks. Before Auto Layout was introduced, iOS applications used autoresizing masks to allow views to scale for different-sized screens at runtime.
+        
+        // Attaching a target-action pair to the segmented control
+        segmentedControl.addTarget(self, action: #selector(mapTypeChanged(_:)), for: .valueChanged)
+        
         // add menu as subview.
         view.addSubview(segmentedControl)
         
@@ -50,6 +54,20 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         print("MapViewController finished loading it's view")
+    }
+    
+    
+    @objc func mapTypeChanged(_ segControl: UISegmentedControl) {
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            mapView.mapType = .standard
+        case 1:
+            mapView.mapType = .hybrid
+        case 2:
+            mapView.mapType = .satellite
+        default:
+            break
+        }
     }
     
 }
