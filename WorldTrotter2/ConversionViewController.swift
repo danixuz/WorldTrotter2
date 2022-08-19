@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConversionViewController: UIViewController {
+class ConversionViewController: UIViewController, UITextFieldDelegate {
     // Create the gradient layer
 //    let gradientLayer: CAGradientLayer = CAGradientLayer()
     
@@ -85,6 +85,13 @@ class ConversionViewController: UIViewController {
             celsiusLabel.text = "???"
         }
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print("Current Text: \(String(describing: textField.text))") // we do this as a way to unwrap textField.text because it's an optional so we cast it to String
+        print("replacement text: \(string)")
+        return true
+    }
+    
     
     @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
 //        if let text = textField.text, !text.isEmpty {
