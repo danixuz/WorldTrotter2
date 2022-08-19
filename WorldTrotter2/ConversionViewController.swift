@@ -11,11 +11,37 @@ class ConversionViewController: UIViewController {
     // Create the gradient layer
 //    let gradientLayer: CAGradientLayer = CAGradientLayer()
     
+    @IBOutlet var celsiusLabel: UILabel!
+    @IBOutlet var textField: UITextField!
+    var fahrenheitValue: Measurement<UnitTemperature>? {
+        didSet {
+            updateCelsiusLabel()
+        }
+    }
+    var celsiusMeasurement: Measurement<UnitTemperature>? {
+        if let fahrenheitValue = fahrenheitValue {
+            return fahrenheitValue.converted(to: .celsius)
+        } else {
+            return nil
+        }
+    }
+    // We want to show a precision up to one fractional digit so we will use number formatter:
+    let numberFormatter: NumberFormatter = {
+        let nf = NumberFormatter()
+        nf.numberStyle = .decimal
+        nf.minimumFractionDigits = 0
+        nf.maximumFractionDigits = 1
+        return nf
+    }()
+    // MARK: You are using a closure to instantiate the number formatter. A NumberFormatter is created with the .decimal style, configured to display no more than one fractional digit. You will learn more about this syntax for declaring properties in Chapter 13.
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do more after view controller's view FINISHES loading.
         
         print("ConversionViewController finished loading it's view")
+        
+        updateCelsiusLabel()
         
         // MARK: Creating tab bar programmaticaly and settings an tab bar item's image.
 //        let tabBar = UITabBarController()
@@ -49,6 +75,39 @@ class ConversionViewController: UIViewController {
 //        gradientLayer.frame = mainViewBounds
         
         // Because layer do not participate in Auto Layout in the same way that views do, we want to update the layer's frame in the view controller's viewWillLayoundSubviews() method.
+    }
+    
+    func updateCelsiusLabel() {
+        if let celsiusMeasurement = celsiusMeasurement {
+//            celsiusLabel.text = "\(celsiusMeasurement.value)"
+            celsiusLabel.text = numberFormatter.string(from: NSNumber(value: celsiusMeasurement.value))
+        } else {
+            celsiusLabel.text = "???"
+        }
+    }
+    
+    @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField) {
+//        if let text = textField.text, !text.isEmpty {
+//            celsiusLabel.text = text
+//        } else {
+//            celsiusLabel.text = "???"
+//        }
+        
+        if let text = textField.text, let value = Double(text) {
+            fahrenheitValue = Measurement(value: value, unit: .fahrenheit)
+        } else {
+            fahrenheitValue = nil
+        }
+        // You can validate multiple conditions within an if statement using a comma to separate the conditions; this acts as an “and.” If the text field has text and that text is not empty, it will be set on the celsiusLabel. If either of those conditions are not true, then the celsiusLabel will be given the string ???.
+        
+        
+        // The default event for text fields is .editingDidBegin but we are interested in .editingChanged instead.
+        // (For buttons it is .touchUpInside, for segmented control it is .valueChanged)
+        
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        textField.resignFirstResponder()
     }
     
 }

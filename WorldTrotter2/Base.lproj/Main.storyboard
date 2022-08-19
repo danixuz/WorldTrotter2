@@ -16,55 +16,74 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="212" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gb3-LQ-yjl">
-                                <rect key="frame" x="155" y="52" width="80" height="60"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SmR-X3-Jh5">
-                                <rect key="frame" x="71.333333333333329" y="120" width="247.66666666666669" height="36"/>
+                                <rect key="frame" x="71.333333333333329" y="121.66666666666669" width="247.66666666666669" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tw-i1-qFT">
-                                <rect key="frame" x="147.33333333333334" y="164" width="95.666666666666657" height="36"/>
+                                <rect key="frame" x="147.33333333333334" y="165.66666666666666" width="95.666666666666657" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpU-hn-vea">
-                                <rect key="frame" x="153" y="208" width="84" height="60"/>
+                                <rect key="frame" x="153" y="209.66666666666666" width="84" height="59.999999999999972"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5Z-Ze-RR3">
-                                <rect key="frame" x="92" y="276" width="206" height="36"/>
+                                <rect key="frame" x="92" y="277.66666666666669" width="206" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="value" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g1C-9D-I3q">
+                                <rect key="frame" x="138.66666666666666" y="52" width="113" height="61.666666666666657"/>
+                                <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="fahrenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="hCG-Xw-iNt"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="Gb3-LQ-yjl" firstAttribute="centerX" secondItem="SmR-X3-Jh5" secondAttribute="centerX" id="0DF-9R-cpZ"/>
-                            <constraint firstItem="Gb3-LQ-yjl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3bl-fd-K7H"/>
+                            <constraint firstItem="H5Z-Ze-RR3" firstAttribute="centerX" secondItem="SmR-X3-Jh5" secondAttribute="centerX" id="1cC-3G-eXc"/>
                             <constraint firstItem="2tw-i1-qFT" firstAttribute="centerX" secondItem="SmR-X3-Jh5" secondAttribute="centerX" id="C05-uq-xLX"/>
+                            <constraint firstItem="QpU-hn-vea" firstAttribute="centerX" secondItem="SmR-X3-Jh5" secondAttribute="centerX" id="CEM-y6-b71"/>
+                            <constraint firstItem="g1C-9D-I3q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F4n-VL-bFO"/>
                             <constraint firstItem="QpU-hn-vea" firstAttribute="top" secondItem="2tw-i1-qFT" secondAttribute="bottom" constant="8" id="GEc-LQ-yeC"/>
+                            <constraint firstItem="2tw-i1-qFT" firstAttribute="centerX" secondItem="SmR-X3-Jh5" secondAttribute="centerX" id="JAE-pr-MeS"/>
+                            <constraint firstItem="SmR-X3-Jh5" firstAttribute="top" secondItem="g1C-9D-I3q" secondAttribute="bottom" constant="8" id="O42-bA-9IG"/>
                             <constraint firstItem="QpU-hn-vea" firstAttribute="centerX" secondItem="SmR-X3-Jh5" secondAttribute="centerX" id="ON2-m7-uAQ"/>
                             <constraint firstItem="H5Z-Ze-RR3" firstAttribute="top" secondItem="QpU-hn-vea" secondAttribute="bottom" constant="8" id="dQ2-CA-O5G"/>
+                            <constraint firstItem="g1C-9D-I3q" firstAttribute="centerX" secondItem="SmR-X3-Jh5" secondAttribute="centerX" id="eSa-vH-8yk"/>
                             <constraint firstItem="H5Z-Ze-RR3" firstAttribute="centerX" secondItem="SmR-X3-Jh5" secondAttribute="centerX" id="epK-0c-azX"/>
-                            <constraint firstItem="Gb3-LQ-yjl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="nTY-5S-Km5"/>
-                            <constraint firstItem="SmR-X3-Jh5" firstAttribute="top" secondItem="Gb3-LQ-yjl" secondAttribute="bottom" constant="8" id="nmB-8y-PQH"/>
+                            <constraint firstItem="g1C-9D-I3q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="ov1-ar-sKL"/>
                             <constraint firstItem="2tw-i1-qFT" firstAttribute="top" secondItem="SmR-X3-Jh5" secondAttribute="bottom" constant="8" id="vc1-Br-NM4"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vhu-B1-a5O" appends="YES" id="u1J-LZ-OSU"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="thermometer" catalog="system" id="rCL-km-234"/>
+                    <connections>
+                        <outlet property="celsiusLabel" destination="QpU-hn-vea" id="xvX-oi-PWB"/>
+                        <outlet property="textField" destination="g1C-9D-I3q" id="8Xi-X8-MWc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="vhu-B1-a5O">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="7zl-a9-WCU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="20" y="3.5545023696682461"/>
         </scene>
