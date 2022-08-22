@@ -87,9 +87,19 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print("Current Text: \(String(describing: textField.text))") // we do this as a way to unwrap textField.text because it's an optional so we cast it to String
-        print("replacement text: \(string)")
-        return true
+        // to prevent decimal seperator
+        let existingHasDecimalSeperator: [Range<String.Index>]? = textField.text?.ranges(of: ".")
+        
+        let replacementStringHasDecimalSeperator: [Range<String.Index>]? = string.ranges(of: ".")
+        
+        if existingHasDecimalSeperator != nil, replacementStringHasDecimalSeperator != nil {
+            return false
+        } else {
+            return true
+        }
+        
+         // Build and run the application. Attempt to enter multiple decimal separators; the application will reject the second decimal separator that you enter.
+
     }
     
     
